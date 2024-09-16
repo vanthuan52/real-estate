@@ -1,0 +1,33 @@
+@import "../../app/variables";
+
+.collection {
+  padding: 0 40px;
+  background-color: #202c46;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  left: 0px;
+
+  background-image: linear-gradient(136deg, rgb(255, 178, 0), rgba(234, 237, 238, 0));
+  padding: 16px;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (min-width: $breakpoint-lg) {
+  .title {
+    top: 60px;
+    left: 120px;
+    font-size: 2.25rem;
+  }
+}
