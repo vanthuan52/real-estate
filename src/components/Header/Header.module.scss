@@ -1,0 +1,81 @@
+@import "../../app/_variables.scss";
+
+.header {
+  height: 72px;
+  background-color: #272942;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+  }
+
+  .logo {
+    aspect-ratio: 2;
+    height: 100%;
+    flex-shrink: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .header-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .header-subtitle {
+    text-align: right;
+  }
+}
+
+.menu {
+  display: none;
+  gap: 20px;
+
+  .menu-item {
+    &__link {
+      text-transform: uppercase;
+      color: white;
+      font-size: 1.75rem;
+      font-weight: 700;
+      font-family: var(--font-montserrat);
+    }
+  }
+}
+
+.menu-mobile {
+  &__trigger {
+    display: flex;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-left: auto;
+
+    svg {
+      stroke-width: 2.5px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .menu {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-mobile {
+    &__trigger {
+      display: none;
+    }
+  }
+}
