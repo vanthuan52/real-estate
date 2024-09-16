@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "NODE_ENV=development next dev --port=3002",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production next start --port=3002",
+    "lint": "next lint",
+    "start:dev": "NODE_ENV=development pm2 start ecosystem.config.js --env development",
+    "start:staging": "NODE_ENV=staging pm2 start ecosystem.config.js --env staging",
+    "start:prod": "NODE_ENV=production pm2 start ecosystem.config.js --env production",
+    "pm2:dev": "NODE_ENV=development next dev --port=3002",
+    "pm2:staging": "NODE_ENV=staging next start --port=3002",
+    "pm2:prod": "NODE_ENV=production next start --port=3002"
   },
   "dependencies": {
     "next": "14.2.11",
