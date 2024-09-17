@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
-import "./Infrastructure.scss";
 import Image from "next/image";
+import "./Infrastructure.scss";
 
 const Infrastructure = () => {
+  const handleClick = () => {};
   return (
     <section className="infrastructure">
       <div className="container-fluid">
@@ -23,12 +25,19 @@ const Infrastructure = () => {
             </div>
           </div>
           <div className="infrastructure-form">
-            <h3>NHẬN BÁO GIÁ QUỸ CĂN ĐẸP NHẤT GỬI THÔNG TIN MẶT BẰNG, LAYOUT, CHÍNH SÁCH</h3>
+            <h3>
+              NHẬN BÁO GIÁ QUỸ CĂN ĐẸP NHẤT GỬI THÔNG TIN MẶT BẰNG, LAYOUT,
+              CHÍNH SÁCH
+            </h3>
             <p>
               HOTLINE hỗ trợ nhanh chóng: <br /> 0866.444.072
             </p>
             <form>
-              <input type="text" placeholder="Số điện thoại" className="form-control" />
+              <input
+                type="text"
+                placeholder="Số điện thoại"
+                className="form-control"
+              />
               <select className="form-control form-control__select">
                 <option value="">*Chọn loại hình sản phẩm</option>
                 <option value="SHOPHOUSE">SHOPHOUSE</option>
@@ -40,13 +49,18 @@ const Infrastructure = () => {
                 <option value="CĂN HỘ 2 PN">CĂN HỘ 2 PN</option>
                 <option value="CĂN HỘ 3 PN">CĂN HỘ 3 PN</option>
               </select>
-              <button>Nhận báo giá</button>
+              <button onClick={handleClick}>Nhận báo giá</button>
             </form>
             <div className="infrastructure-notice">
-              <span>* Thông tin đầy đủ trực tiếp từ trưởng phòng kinh doanh SUN GROUP.</span>
+              <span>
+                * Thông tin đầy đủ trực tiếp từ trưởng phòng kinh doanh SUN
+                GROUP.
+              </span>
               <span>* Phân tích dự án chuyên sâu, khách quan.</span>
               <span> Bảo mật tuyệt đối thông tin cá nhân khách hàng.</span>
-              <span>* Chính sách chiết khấu, ưu đãi khách hàng tốt nhất thị trường!</span>
+              <span>
+                * Chính sách chiết khấu, ưu đãi khách hàng tốt nhất thị trường!
+              </span>
             </div>
           </div>
         </div>

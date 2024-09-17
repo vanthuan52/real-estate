@@ -30,7 +30,7 @@ const Collection = () => {
     <section className="collection">
       <div className="container-fluid">
         <div className="collection-content">
-          <h3 className="title">CĂN HỘ, TOWHOUSE, BIỆT THỰ SUN SYMPHONY </h3>
+          <h2 className="title">CĂN HỘ, TOWHOUSE, BIỆT THỰ SUN SYMPHONY </h2>
           <div className="collection-slider">
             <Slider data={images} />
           </div>
