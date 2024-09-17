@@ -4,7 +4,6 @@ import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import Image from "next/image";
 

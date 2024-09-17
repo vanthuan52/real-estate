@@ -2,7 +2,7 @@
 
 .introduction {
   padding: 32px 0;
-  background-color: #202c46;
+  background-color: $primary-bg-color;
   position: relative;
 }
 
@@ -10,7 +10,7 @@
   font-size: 2.25rem;
   line-height: 1.75;
   text-align: center;
-  color: $primary-color;
+  color: $accent-color;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -20,7 +20,7 @@
   font-size: 2.25rem;
   line-height: 1.75;
   text-align: center;
-  color: white;
+  color: $light-text-color;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -33,9 +33,9 @@
   flex-direction: column;
   gap: 24px;
   padding: 16px;
-  border: 2px solid $primary-color;
+  border: 2px solid $accent-color;
   text-align: justify;
-  color: white;
+  color: $light-text-color;
 }
 
 .decor {
