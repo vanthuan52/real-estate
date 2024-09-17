@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -28,9 +28,13 @@ const images = [
 const Collection = () => {
   return (
     <section className="collection">
-      <div className="slider-wrapper">
-        <h3 className="title">CĂN HỘ, TOWHOUSE, BIỆT THỰ SUN SYMPHONY </h3>
-        <Slider data={images} />
+      <div className="container-fluid">
+        <div className="collection-content">
+          <h3 className="title">CĂN HỘ, TOWHOUSE, BIỆT THỰ SUN SYMPHONY </h3>
+          <div className="collection-slider">
+            <Slider data={images} />
+          </div>
+        </div>
       </div>
     </section>
   );

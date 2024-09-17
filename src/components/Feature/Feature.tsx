@@ -29,6 +29,8 @@ const Feature = () => {
                 Diện tích: từ 25,8m² đến 112,1m² (không bao gồm Penthouse)
                 <br />
                 Hình thức sở hữu: Sổ hồng lâu dài
+                <br />
+                <br />
               </span>
             </p>
             <button>Báo giá</button>

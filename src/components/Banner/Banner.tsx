@@ -1,11 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import Image from "next/image";
+import React from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -56,7 +51,9 @@ const Banner = () => {
   return (
     <section>
       <div className="container">
-        <Slider data={images} />
+        <div className="banner-slider">
+          <Slider data={images} />
+        </div>
       </div>
     </section>
   );
