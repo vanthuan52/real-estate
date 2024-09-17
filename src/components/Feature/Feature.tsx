@@ -6,15 +6,16 @@ const Feature = () => {
   return (
     <section className="feature">
       <div className="container">
-        <h3 className="heading">CÁC LOẠI HÌNH SẢN PHẨM TỔ HỢP SUN SYMPHONY</h3>
+        <h2 className="heading">CÁC LOẠI HÌNH SẢN PHẨM TỔ HỢP SUN SYMPHONY</h2>
         <div className="feature-item">
           <div className="feature-content">
-            <div className="feature-title">3 TOÀ CĂN HỘ CAO CẤP</div>
+            <h3 className="feature-title">3 TOÀ CĂN HỘ CAO CẤP</h3>
             <p className="feature-description">
               <span>
-                Căn hộ cực đẹp nằm sát dòng sông thơ mộng, đối diện điểm bắn pháo hoa DIFF 100% căn
-                hộ không bị khuất view, tầm nhìn Panorama 360 độ. Dự án sở hữu tầm view 3 trong 1
-                đẳng cấp: View Sông Hàn, View biển &amp; View thành phố.
+                Căn hộ cực đẹp nằm sát dòng sông thơ mộng, đối diện điểm bắn
+                pháo hoa DIFF 100% căn hộ không bị khuất view, tầm nhìn Panorama
+                360 độ. Dự án sở hữu tầm view 3 trong 1 đẳng cấp: View Sông Hàn,
+                View biển &amp; View thành phố.
               </span>
               <br />
               <br />
@@ -24,7 +25,8 @@ const Feature = () => {
                 <br />
                 Tầng nổi: Khoảng 1313 Căn hộ cao cấp
                 <br />
-                Loại hình: Studio, 1Br +1, 2Br, 3Br, Penthouse, Duplex , Dual Front...
+                Loại hình: Studio, 1Br +1, 2Br, 3Br, Penthouse, Duplex , Dual
+                Front...
                 <br />
                 Diện tích: từ 25,8m² đến 112,1m² (không bao gồm Penthouse)
                 <br />
@@ -42,11 +44,11 @@ const Feature = () => {
 
         <div className="feature-item">
           <div className="feature-content">
-            <div className="feature-title">20 CĂN VILLA MẶT SÔNG</div>
+            <h3 className="feature-title">20 CĂN VILLA MẶT SÔNG</h3>
             <p className="feature-description">
-              Một khu đô thị năng động &amp; hiện đại của Đà Nẵng đang trên đà phát triển mạnh mẽ,
-              giúp nâng tầm diện mạo Đà thành, đóng góp vào mục tiêu phát triển hội nhập toàn cầu
-              của thành phố.
+              Một khu đô thị năng động &amp; hiện đại của Đà Nẵng đang trên đà
+              phát triển mạnh mẽ, giúp nâng tầm diện mạo Đà thành, đóng góp vào
+              mục tiêu phát triển hội nhập toàn cầu của thành phố.
               <br />
               Số lượng căn: 20 căn
               <br />
@@ -68,10 +70,11 @@ const Feature = () => {
 
         <div className="feature-item">
           <div className="feature-content">
-            <div className="feature-title">180 CĂN TOWNHOUSE</div>
+            <h3 className="feature-title">180 CĂN TOWNHOUSE</h3>
             <p className="feature-description">
-              Khu vực tập trung dân cư chất lượng cao, một nơi hội tụ nhiều chuyên gia quốc tế,
-              doanh nhân thành đạt, cộng đồng người nước ngoài (Hàn, Nhật, Trung…).
+              Khu vực tập trung dân cư chất lượng cao, một nơi hội tụ nhiều
+              chuyên gia quốc tế, doanh nhân thành đạt, cộng đồng người nước
+              ngoài (Hàn, Nhật, Trung…).
               <br />
               Số lượng căn: 180 căn
               <br />

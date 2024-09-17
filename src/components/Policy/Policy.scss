@@ -1,4 +1,4 @@
-@import "../../app/variables";
+@import "../../styles/variables";
 
 .policy {
   padding: 20px 0;
@@ -102,6 +102,7 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    cursor: pointer;
 
     &__icon {
       aspect-ratio: 1/1;

@@ -23,14 +23,16 @@ const images = [
 const Amenity = () => {
   return (
     <section className="amenity">
-      <h3 className="heading">CHUỖI TIỆN ÍCH ĐẲNG CẤP 5 SAO</h3>
+      <h2 className="heading">CHUỖI TIỆN ÍCH ĐẲNG CẤP 5 SAO</h2>
       <div className="container-fluid">
         <div className="amenity-content">
           <div className="amenity-content__left">
-            <p>Được quản lý và vận hành bởi thương hiệu quản lý 5 sao quốc tế</p>
             <p>
-              Sun Property Management đảm bảo một không gian tiện ích phong phú, đa dạng với tiêu
-              chuẩn quốc tế cho.
+              Được quản lý và vận hành bởi thương hiệu quản lý 5 sao quốc tế
+            </p>
+            <p>
+              Sun Property Management đảm bảo một không gian tiện ích phong phú,
+              đa dạng với tiêu chuẩn quốc tế cho.
             </p>
             <ul>
               <li>Bể bơi vô cực</li>
@@ -63,7 +65,8 @@ const Amenity = () => {
                 <button>Gửi ngay</button>
               </form>
               <span>
-                (*) Chúng tôi cam kết thông tin của quý khách hàng sẽ được bảo mật tuyệt đối!
+                (*) Chúng tôi cam kết thông tin của quý khách hàng sẽ được bảo
+                mật tuyệt đối!
               </span>
             </div>
           </div>
