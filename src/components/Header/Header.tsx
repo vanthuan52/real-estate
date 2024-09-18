@@ -25,6 +25,14 @@ const Header = () => {
     exit: { x: "-100%", transition: { duration: 0.3 } }, // Trượt ra khi đóng
   };
 
+  const scrollToSection = (e: any, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    const yOffset = 60; // Điều chỉnh giá trị này theo chiều cao của header
+    const y = element!.getBoundingClientRect().top + window.scrollY - yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
     <React.Fragment>
       <div className={styles.header}>
@@ -36,37 +44,65 @@ const Header = () => {
 
             <div className={styles.menu}>
               <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "introduction")}
+                  className={styles["menu-item__link"]}
+                >
                   Giới thiệu
                 </Link>
               </div>
               <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "location")}
+                  className={styles["menu-item__link"]}
+                >
                   Vị trí
                 </Link>
               </div>
               <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
-                  Mặt bằng
-                </Link>
-              </div>
-              <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
-                  Loại hình
-                </Link>
-              </div>
-              <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
-                  Layout
-                </Link>
-              </div>
-              <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "amentity")}
+                  className={styles["menu-item__link"]}
+                >
                   Tiện ích
                 </Link>
               </div>
               <div className={styles["menu-item"]}>
-                <Link href={"#"} className={styles["menu-item__link"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "infrastructure")}
+                  className={styles["menu-item__link"]}
+                >
+                  Mặt bằng
+                </Link>
+              </div>
+              <div className={styles["menu-item"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "feature")}
+                  className={styles["menu-item__link"]}
+                >
+                  Loại hình
+                </Link>
+              </div>
+              <div className={styles["menu-item"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "layout")}
+                  className={styles["menu-item__link"]}
+                >
+                  Layout
+                </Link>
+              </div>
+              <div className={styles["menu-item"]}>
+                <Link
+                  href={{}}
+                  onClick={(e) => scrollToSection(e, "policy")}
+                  className={styles["menu-item__link"]}
+                >
                   Chính sách
                 </Link>
               </div>

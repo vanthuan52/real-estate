@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Layout = () => {
   return (
-    <section className="layout">
+    <section className="layout" id="layout">
       <div className="container">
         <h3 className="heading">LAYOUT BÓC MÁI CĂN HỘ SUN SYMPHONY ĐÀ NẴNG</h3>
         <div className="layout-list">

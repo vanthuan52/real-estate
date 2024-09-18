@@ -9,8 +9,6 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     color: #121212;
     z-index: 10;
     width: auto;
@@ -22,11 +20,11 @@
   }
 
   .swiper-button-prev {
-    left: 12;
+    left: 12px;
   }
 
   .swiper-button-next {
-    right: 12;
+    right: 12px;
   }
 
   .slide {
@@ -40,6 +38,18 @@
   }
 }
 
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $light-text-color;
+  background: rgba($color: $dark-color, $alpha: 0.7);
+  border-radius: 50%;
+  padding: 6;
+  font-size: 4rem;
+}
+
 @media (min-width: $breakpoint-md) {
   .slider {
     .slide {
@@ -50,6 +60,10 @@
     .swiper-button-next {
       font-size: 5rem;
     }
+  }
+
+  .play-button {
+    font-size: 6rem;
   }
 }
 
