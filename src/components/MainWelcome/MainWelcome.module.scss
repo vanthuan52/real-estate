@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+
+.welcome {
+  padding: 32px 20px;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-title {
+    font-size: 2.25rem;
+    color: $accent-color;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  &-description {
+    font-size: 1.5rem;
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  .line {
+    margin-top: 24px;
+    width: 60px;
+    height: 3px;
+    background-color: gray;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .welcome {
+    padding: 44px 20px;
+
+    &-title {
+      font-size: 2.75rem;
+      margin-bottom: 16px;
+    }
+
+    &-description {
+      font-size: 1.75rem;
+    }
+  }
+}

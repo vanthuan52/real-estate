@@ -1,0 +1,64 @@
+@import "../../styles/variables";
+
+.footer {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  min-height: 72px;
+  padding: 24px 0;
+
+  &-wrapper {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-logo {
+    aspect-ratio: 3;
+    height: 44px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    justify-content: center;
+
+    &-item {
+      font-size: 1.5rem;
+      font-weight: 600;
+      height: 100%;
+      display: flex;
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .footer {
+    padding: 14px 0;
+
+    &-wrapper {
+      flex-direction: row;
+    }
+
+    &-logo {
+      margin-right: auto;
+    }
+
+    .menu {
+      width: auto;
+      justify-content: start;
+    }
+  }
+}
