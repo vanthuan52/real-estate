@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+}
+
+.item {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  font-size: 3rem;
+  box-shadow: 0 0 10px gray;
+
+  &:first-child {
+    background-color: rgb(255, 145, 77);
+    color: white;
+  }
+
+  &:nth-child(2) {
+    background-color: #fff;
+    color: #0088fc;
+    font-size: 3.5rem;
+  }
+
+  &:last-child {
+    background-color: #0088fc;
+    color: white;
+  }
+}

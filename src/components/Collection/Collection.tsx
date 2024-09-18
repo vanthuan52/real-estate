@@ -10,18 +10,22 @@ const images = [
   {
     src: "/images/collection-4.jpg",
     alt: "",
+    type: "image",
   },
   {
     src: "/images/collection-1.jpg",
     alt: "",
+    type: "image",
   },
   {
     src: "/images/collection-2.jpg",
     alt: "",
+    type: "image",
   },
   {
     src: "/images/collection-3.jpg",
     alt: "",
+    type: "image",
   },
 ];
 
@@ -32,7 +36,7 @@ const Collection = () => {
         <div className="collection-content">
           <h2 className="title">CĂN HỘ, TOWHOUSE, BIỆT THỰ SUN SYMPHONY </h2>
           <div className="collection-slider">
-            <Slider data={images} />
+            <Slider data={images as any} />
           </div>
         </div>
       </div>

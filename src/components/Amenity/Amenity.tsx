@@ -6,33 +6,36 @@ const images = [
   {
     src: "/images/amenity-4.png",
     alt: "",
+    type: "image",
   },
   {
     src: "/images/amenity-1.png",
     alt: "",
+    type: "image",
   },
   {
     src: "/images/amenity-2.png",
     alt: "",
+    type: "image",
   },
   {
     src: "/images/amenity-3.png",
     alt: "",
+    type: "image",
   },
 ];
+
 const Amenity = () => {
   return (
-    <section className="amenity">
+    <section className="amenity" id="amentity">
       <h2 className="heading">CHUỖI TIỆN ÍCH ĐẲNG CẤP 5 SAO</h2>
       <div className="container-fluid">
         <div className="amenity-content">
           <div className="amenity-content__left">
+            <p>Được quản lý và vận hành bởi thương hiệu quản lý 5 sao quốc tế</p>
             <p>
-              Được quản lý và vận hành bởi thương hiệu quản lý 5 sao quốc tế
-            </p>
-            <p>
-              Sun Property Management đảm bảo một không gian tiện ích phong phú,
-              đa dạng với tiêu chuẩn quốc tế cho.
+              Sun Property Management đảm bảo một không gian tiện ích phong phú, đa dạng với tiêu
+              chuẩn quốc tế cho.
             </p>
             <ul>
               <li>Bể bơi vô cực</li>
@@ -50,12 +53,12 @@ const Amenity = () => {
               <li>Vườn thiền</li>
               <li>Đài phun nước</li>
               <li>Yoga, Sona, Gym...</li>
-              <li>Kid Club</li>{" "}
+              <li>Kid Club</li>
             </ul>
           </div>
           <div className="amenity-content__right">
             <div className="amenity-slider">
-              <Slider data={images} />
+              <Slider data={images as any} />
             </div>
             <div className="subscribe">
               <h3>ĐĂNG KÝ THAM QUAN NHÀ MẪU</h3>
@@ -65,8 +68,7 @@ const Amenity = () => {
                 <button>Gửi ngay</button>
               </form>
               <span>
-                (*) Chúng tôi cam kết thông tin của quý khách hàng sẽ được bảo
-                mật tuyệt đối!
+                (*) Chúng tôi cam kết thông tin của quý khách hàng sẽ được bảo mật tuyệt đối!
               </span>
             </div>
           </div>
