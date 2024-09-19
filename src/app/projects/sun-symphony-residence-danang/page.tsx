@@ -1,13 +1,14 @@
 import React from "react";
-import Banner from "@/components/Banner/Banner";
-import Introduction from "@/components/Introduction/Introduction";
-import Location from "@/components/Location/Location";
-import Collection from "@/components/Collection/Collection";
-import Feature from "@/components/Feature/Feature";
-import Layout from "@/components/Layout/Layout";
-import Amenity from "@/components/Amenity/Amenity";
-import Infrastructure from "@/components/Infrastructure/Infrastructure";
-import Policy from "@/components/Policy/Policy";
+
+import Introduction from "@/components/SunSymphony/Introduction/Introduction";
+import Location from "@/components/SunSymphony/Location/Location";
+import Feature from "@/components/SunSymphony/Feature/Feature";
+import Layout from "@/components/SunSymphony/Layout/Layout";
+import Infrastructure from "@/components/SunSymphony/Infrastructure/Infrastructure";
+import Policy from "@/components/SunSymphony/Policy/Policy";
+import Banner from "@/components/SunSymphony/Banner/Banner";
+import Amenity from "@/components/SunSymphony/Amenity/Amenity";
+import Collection from "@/components/SunSymphony/Collection/Collection";
 
 const ProjectPage = () => {
   return (

@@ -1,0 +1,21 @@
+@import "@/styles/variables.module";
+@import "@/styles/variables.sun_symphony.module";
+
+.banner-slider {
+  aspect-ratio: 4/3;
+  //   height: 640px;
+}
+
+@media (min-width: $breakpoint-md) {
+  .banner-slider {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .banner-slider {
+    aspect-ratio: unset;
+    //   height: calc(100vh - 72px);
+    height: calc(90vh - 72px);
+  }
+}

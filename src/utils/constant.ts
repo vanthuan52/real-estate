@@ -1,17 +1,11 @@
 import { Metadata } from "next";
 export const NODE_ENV = process.env.NODE_ENV || "development";
-export const API_ENDPOINT =
-  process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:5001/api/v1";
-export const SERVER_DOMAIN =
-  process.env.NEXT_PUBLIC_SERVER_DOMAIN || "http://localhost:5001";
-export const MAIN_DOMAIN =
-  process.env.NEXT_PUBLIC_MAIN_DOMAIN || "http://localhost:3002";
-export const SERVER_PROTOCOL =
-  process.env.NEXT_PUBLIC_SERVER_PROTOCOL || "http";
+export const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:5001/api/v1";
+export const SERVER_DOMAIN = process.env.NEXT_PUBLIC_SERVER_DOMAIN || "http://localhost:5001";
+export const MAIN_DOMAIN = process.env.NEXT_PUBLIC_MAIN_DOMAIN || "http://localhost:3002";
+export const SERVER_PROTOCOL = process.env.NEXT_PUBLIC_SERVER_PROTOCOL || "http";
 export const SERVER_HOST = process.env.NEXT_PUBLIC_SERVER_HOST || "localhost";
-export const SERVER_PORT = parseInt(
-  process.env.NEXT_PUBLIC_SERVER_PORT || "5001"
-);
+export const SERVER_PORT = parseInt(process.env.NEXT_PUBLIC_SERVER_PORT || "5001");
 
 export const openGraphImages = [{ url: "/opengraph-image.png" }];
 
@@ -71,3 +65,8 @@ export const META_CONTENT_FPT_PLAZA: any = {
     },
   },
 };
+
+export const PROJECT_SLUG = {
+  FPT_PLAZA_3: "fpt-plaza-3",
+  SUN_SYMPHONY: "sun-symphony",
+} as const;

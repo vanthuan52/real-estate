@@ -1,4 +1,4 @@
-@import "./variables";
+@use "variables.module" as variables;
 
 :root {
   --background: #ffffff;
@@ -68,23 +68,23 @@ $container-padding: 20px;
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: $breakpoint-sm) {
+  @media (min-width: variables.$breakpoint-sm) {
     max-width: 640px;
   }
 
-  @media (min-width: $breakpoint-md) {
+  @media (min-width: variables.$breakpoint-md) {
     max-width: 768px;
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @media (min-width: variables.$breakpoint-lg) {
     max-width: 1024px;
   }
 
-  @media (min-width: $breakpoint-xl) {
+  @media (min-width: variables.$breakpoint-xl) {
     max-width: 1280px;
   }
 
-  @media (min-width: $breakpoint-2xl) {
+  @media (min-width: variables.$breakpoint-2xl) {
     max-width: 1340px;
   }
 }

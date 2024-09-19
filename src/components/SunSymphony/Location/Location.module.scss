@@ -1,0 +1,265 @@
+@import "@/styles/variables.module";
+@import "@/styles/variables.sun_symphony.module";
+
+.location {
+  padding: 32px 0;
+  background-repeat: repeat;
+
+  &-wrapper {
+    display: flex;
+    gap: 36px;
+    flex-direction: column;
+  }
+
+  &-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title {
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &-description {
+    font-size: 1.625rem;
+    line-height: 1.75;
+    margin: 24px 0;
+    font-weight: 500;
+  }
+
+  &-map {
+    //  aspect-ratio: 1/1;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background-color: $secondary-bg-color;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0 32px 0;
+
+    h3 {
+      text-align: center;
+      color: $light-text-color;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.25rem;
+    }
+
+    iframe {
+      aspect-ratio: 1/1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      margin-left: 12px;
+    }
+  }
+}
+
+.nearby {
+  position: relative;
+  margin-top: 36px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+
+  .line {
+    width: 6px;
+    height: 100%;
+    background-color: $primary-bg-color;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    background-color: $button-bg-color;
+  }
+
+  .places {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .place {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $button-bg-color;
+        left: 0px;
+        top: 6px;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .location {
+    .container-fluid {
+      padding: 0;
+    }
+
+    &-wrapper {
+      flex-direction: row;
+    }
+
+    &-title {
+      font-size: 2.25rem;
+      line-height: 1.5;
+    }
+
+    &-description {
+      margin: 32px 20px 0 20px;
+      font-size: 1.625rem;
+    }
+
+    &-map {
+      width: 40%;
+
+      iframe {
+        aspect-ratio: 1.5;
+      }
+    }
+  }
+
+  .nearby {
+    margin-top: auto !important;
+    margin-bottom: 24px;
+
+    .line {
+      height: 6px;
+      width: 100%;
+      top: 32px;
+      left: 0;
+      transform: unset;
+    }
+
+    .time {
+      margin-left: -6px;
+    }
+
+    .dot {
+      margin-left: -6px;
+    }
+
+    &-group {
+      display: flex;
+      gap: 0;
+      padding: 0 0 0 20px;
+      flex-direction: row;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start !important;
+      text-align: left !important;
+
+      &:nth-of-type(1) {
+        width: 30%;
+      }
+      &:nth-of-type(2) {
+        width: 40%;
+      }
+      &:nth-of-type(3) {
+        width: 30%;
+      }
+    }
+
+    .places {
+      .place {
+        padding-left: calc(7px + 7px);
+        margin-left: -3px;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .nearby {
+    &-group {
+      padding: 20px 0;
+      display: flex;
+      gap: 36px;
+      flex-direction: column;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      gap: 8px;
+
+      &:nth-child(odd) {
+        align-self: flex-end;
+
+        .time {
+          margin-left: 16px;
+          font-size: 1.5rem;
+        }
+
+        .dot {
+          margin-left: -6px;
+        }
+
+        .places {
+          margin-left: 16px;
+
+          .place {
+            padding-right: 0;
+            padding-left: calc(7px + 7px);
+            margin-right: 0px;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        align-items: flex-end;
+        text-align: right;
+
+        .time {
+          margin-right: 16px;
+          font-size: 1.5rem;
+        }
+
+        .dot {
+          margin-right: -6px;
+        }
+
+        .places {
+          margin-right: 16px;
+          align-items: flex-end;
+
+          .place {
+            padding-left: 0;
+            padding-right: calc(7px + 7px);
+            margin-left: 0px;
+
+            &::before {
+              left: unset;
+              right: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
