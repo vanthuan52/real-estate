@@ -1,6 +1,7 @@
 import React from "react";
 
 import style from "./MainLatest.module.scss";
+import MainButton from "../MainButton/MainButton";
 
 const MainLatest = () => {
   return (
@@ -18,6 +19,7 @@ const MainLatest = () => {
           allowFullScreen
         ></iframe>
       </div>
+      <MainButton>Xem thêm</MainButton>
     </section>
   );
 };

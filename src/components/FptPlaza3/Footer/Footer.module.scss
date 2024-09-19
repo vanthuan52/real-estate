@@ -1,0 +1,62 @@
+@import "@/styles/variables.module";
+
+.footer {
+  &-wrapper {
+    display: flex;
+    gap: 36px;
+    height: 100%;
+    flex-direction: column-reverse;
+    min-height: 56px;
+  }
+
+  &-copyright {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    align-self: center;
+  }
+
+  .menu {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    width: 90%;
+    justify-content: center;
+    flex-direction: column;
+
+    &-item {
+      font-size: 1.5rem;
+      font-weight: 600;
+      height: 100%;
+      display: flex;
+      text-transform: uppercase;
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .footer {
+    &-wrapper {
+      flex-direction: row;
+    }
+
+    &-copyright {
+      text-align: left;
+    }
+
+    .menu {
+      width: auto;
+      flex-direction: row;
+      justify-content: start;
+    }
+  }
+}

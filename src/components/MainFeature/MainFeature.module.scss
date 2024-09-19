@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "@/styles/variables.module";
 
 .feature {
   padding: 32px 20px;
@@ -14,7 +14,8 @@
 
   &-description {
     font-size: 1.5rem;
-    line-height: 1.75;
+    line-height: 1.5;
+    text-align: center;
   }
 
   &-wrapper {
@@ -27,6 +28,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 16px;
   }
 
@@ -39,6 +41,8 @@
 
 @media (min-width: $breakpoint-lg) {
   .feature {
+    padding: 44px 0;
+
     &-wrapper {
       flex-direction: row;
     }
@@ -49,11 +53,14 @@
     }
 
     &-description {
-      font-size: 1.75rem;
+      font-size: 1.625rem;
+      line-height: 1.75;
+      text-align: left;
     }
 
     &-content {
       width: 50%;
+      align-items: start;
     }
 
     &-image {

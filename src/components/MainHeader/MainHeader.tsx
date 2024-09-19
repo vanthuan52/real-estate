@@ -7,23 +7,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import * as motion from "framer-motion/client";
-import { configResponsive, useResponsive } from "ahooks";
-
-configResponsive({
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  "2xl": 1340,
-});
+import { useResponsive, useMount } from "ahooks";
 
 const MainHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const responsive = useResponsive();
+  const [mounted, setMounted] = useState(false);
+  const responsive: any = useResponsive();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     document.body.classList.toggle("no-scroll", showMenu);
@@ -52,6 +49,7 @@ const MainHeader = () => {
       </Link>
     </>
   );
+  if (!mounted) return;
 
   return (
     <header className={style["header"]}>
@@ -61,6 +59,7 @@ const MainHeader = () => {
             <Image src={"/images/main/logo.png"} alt="logo" fill />
           </div>
 
+          {/* @ts-ignore */}
           {responsive.lg ? (
             <div className={style["menu"]}>{renderMenuContent}</div>
           ) : (

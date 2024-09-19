@@ -1,0 +1,21 @@
+@import "@/styles/variables.module";
+
+.about {
+  margin: 40px 0 60px 0;
+
+  &-description {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: justify;
+    text-indent: 15%;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .about {
+    &-description {
+      font-size: 2.75rem;
+    }
+  }
+}

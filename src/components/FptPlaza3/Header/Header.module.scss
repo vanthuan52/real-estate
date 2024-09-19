@@ -1,0 +1,56 @@
+@import "@/styles/variables.module";
+@import "@/styles/variables.fpt_plaza_3.module";
+
+.header {
+  top: 0;
+  position: sticky;
+  z-index: 50;
+  background-color: $background-color;
+
+  &-wrapper {
+    display: flex;
+    height: 64px;
+    padding: 10px 0;
+    justify-content: space-between;
+  }
+
+  &-logo {
+    flex-shrink: 0;
+    aspect-ratio: 3;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+  }
+
+  .menu {
+    display: none;
+    height: 100%;
+    gap: 20px;
+
+    &-item {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .header {
+    &-logo {
+      margin: 0 auto;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+
+      &-item {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

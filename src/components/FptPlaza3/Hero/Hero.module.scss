@@ -1,0 +1,75 @@
+@import "@/styles/variables.module";
+
+.hero {
+  margin: 40px 0;
+
+  &-title {
+    font-size: 3rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  &-images {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &-image {
+    position: relative;
+    aspect-ratio: 16/9;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  &-subcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .hero {
+    &-title {
+      font-size: 5.5rem;
+      line-height: 1.25;
+    }
+
+    &-images {
+      flex-direction: row;
+    }
+
+    &-image {
+      aspect-ratio: 4/3;
+      width: 20%;
+
+      &:first-child {
+        width: 60%;
+      }
+    }
+
+    &-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-subcontent {
+      font-size: 1.5rem;
+      align-items: flex-end;
+
+      p:last-child {
+        max-width: 540px;
+      }
+    }
+  }
+}
