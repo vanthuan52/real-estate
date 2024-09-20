@@ -14,6 +14,7 @@ import styles from "./Expertise.module.scss";
 import { getImagePublicPath } from "@/utils/getImagePublicPath";
 import { PROJECT_SLUG } from "@/utils/constant";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import TextLink from "../TextLink/TextLink";
 
 const Expertise = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -21,11 +22,14 @@ const Expertise = () => {
   return (
     <section className={styles["expertise"]}>
       <div className="container">
-        <HeadingSection title="Our Expertise" />
+        <HeadingSection title="Our Expertise">
+          <TextLink href="#">View all blogs</TextLink>
+        </HeadingSection>
+
         <div className={styles["expertise-content"]}>
-          <h3 className={styles["expertise-title"]}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </h3>
+          <div className={styles["expertise-title"]}>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          </div>
 
           <div className={styles["slider-control"]}>
             <button

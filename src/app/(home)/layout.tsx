@@ -1,11 +1,10 @@
-"use client";
-
 import React from "react";
 import MainFooter from "@/components/MainFooter/MainFooter";
-import MainHeader from "@/components/MainHeader/MainHeader";
 import { configResponsive } from "ahooks/lib";
-
 import variables from "@/styles/_variables.module.scss";
+import "./layout.scss";
+import dynamic from "next/dynamic";
+import MainHeader from "@/components/MainHeader/MainHeader";
 
 configResponsive({
   sm: parseInt(variables.breakpointSM),
@@ -21,10 +20,10 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100VH" }}>
       <MainHeader />
-      {children}
+      <div style={{ flex: 1 }}>{children}</div>
       <MainFooter />
-    </>
+    </div>
   );
 }

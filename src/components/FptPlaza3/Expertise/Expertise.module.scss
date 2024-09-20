@@ -9,7 +9,7 @@
   }
 
   &-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     display: block;
   }
 }
@@ -29,7 +29,7 @@
   .slide-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     margin-top: 20px;
     width: 100%;
     align-items: center;
@@ -41,9 +41,9 @@
   }
 
   .slide-subtitle {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.25;
   }
 
   &-control {
@@ -54,14 +54,14 @@
     gap: 12px;
 
     &__button {
-      width: 52px;
-      height: 52px;
       align-items: center;
       justify-content: center;
       display: flex;
       border: 1px solid black;
       border-radius: 50%;
-      font-size: 2.75rem;
+      width: 44px;
+      height: 44px;
+      font-size: 2.25rem;
     }
   }
 }
@@ -71,9 +71,8 @@
     margin: 40px 0;
 
     &-title {
-      font-size: 3rem;
-      line-height: 1.5;
-      width: 45%;
+      font-size: 2.5rem;
+      width: 40%;
     }
   }
 
@@ -91,6 +90,14 @@
       right: 0;
       bottom: 0;
       margin-top: 0;
+    }
+
+    .slider-control {
+      &__button {
+        width: 52px;
+        height: 52px;
+        font-size: 2.75rem;
+      }
     }
   }
 }

@@ -5,12 +5,15 @@ import HeadingSection from "../HeadingSection/HeadingSection";
 import styles from "./Projects.module.scss";
 import { getImagePublicPath } from "@/utils/getImagePublicPath";
 import { PROJECT_SLUG } from "@/utils/constant";
+import TextLink from "../TextLink/TextLink";
 
 const Projects = () => {
   return (
     <section className={styles["project"]}>
       <div className="container">
-        <HeadingSection title="Latest Projects" />
+        <HeadingSection title="Latest Projects">
+          <TextLink href="#">View all projects</TextLink>
+        </HeadingSection>
         <div className={styles["project-list"]}>
           <div className={styles["column-one"]}>
             <div className={styles["project-item"]}>
@@ -42,6 +45,7 @@ const Projects = () => {
               <div className={styles["project-year"]}>2024</div>
             </div>
           </div>
+
           <div className={styles["column-two"]}>
             <div className={styles["project-item"]}>
               <div className={styles["project-image"]}>
@@ -72,6 +76,7 @@ const Projects = () => {
               <div className={styles["project-year"]}>2024</div>
             </div>
           </div>
+
           <div className={styles["column-three"]}>
             <div className={styles["project-item"]}>
               <div className={styles["project-image"]}>
