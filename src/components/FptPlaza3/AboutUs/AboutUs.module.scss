@@ -4,7 +4,7 @@
   margin: 40px 0 60px 0;
 
   &-description {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 500;
     line-height: 1.5;
     text-align: justify;
@@ -15,7 +15,7 @@
 @media (min-width: $breakpoint-md) {
   .about {
     &-description {
-      font-size: 2.75rem;
+      font-size: 2.5rem;
     }
   }
 }

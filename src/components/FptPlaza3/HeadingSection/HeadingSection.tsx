@@ -11,6 +11,7 @@ const HeadingSection = ({ title, children }: HeadingSectionProps) => {
   return (
     <div className={styles["heading"]}>
       <h2 className={styles["title"]}>{title}</h2>
+      {children}
     </div>
   );
 };

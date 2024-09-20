@@ -68,5 +68,5 @@ export const META_CONTENT_FPT_PLAZA: any = {
 
 export const PROJECT_SLUG = {
   FPT_PLAZA_3: "fpt-plaza-3",
-  SUN_SYMPHONY: "sun-symphony",
+  SUN_SYMPHONY: "sun-symphony-residence",
 } as const;
