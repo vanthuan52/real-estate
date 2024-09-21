@@ -1,31 +1,34 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import React, { useEffect, useMemo, useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
-import { AnimatePresence } from "framer-motion";
-import * as motion from "framer-motion/client";
-import { useResponsive, useMount } from "ahooks";
-import { BsChevronDown } from "react-icons/bs";
 
-import style from "./MainHeader.module.scss";
 import { PROJECT_SLUG } from "@/utils/constant";
 import MainMenuDropdown from "../MainMenuDropdown/MainMenuDropdown";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { Link } from "@/lib/router-events";
+import { configResponsive, useResponsive } from "ahooks";
+
+import styles from "./MainHeader.module.scss";
+import variables from "@/styles/_variables.module.scss";
+
+configResponsive({
+  sm: parseInt(variables.breakpointSM),
+  md: parseInt(variables.breakpointMD),
+  lg: parseInt(variables.breakpointLG),
+  xl: parseInt(variables.breakpointXL),
+  "2xl": parseInt(variables.breakpoint2XL),
+});
 
 const MainHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const responsive = useResponsive();
   const pathname = usePathname();
-  const responsive: any = useResponsive();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     document.body.classList.toggle("no-scroll", showMenu);
@@ -35,91 +38,62 @@ const MainHeader = () => {
     if (showMenu) setShowMenu(false);
   }, [pathname]);
 
-  const renderMobileMenu = (
-    <AnimatePresence>
-      {showMenu && (
-        <motion.div
-          className={style["menu"]}
-          initial={{ opacity: 0, y: "-20%" }}
-          animate={{ opacity: 1, y: "0%" }}
-          exit={{ opacity: 0, y: "-20%" }}
-          transition={{ duration: 0.2 }}
-        >
-          <Link href="#" className={style["menu-item"]}>
-            Trang chủ
-          </Link>
-          <MainMenuDropdown
-            title="Dự án"
-            href="projects"
-            className={style["menu-item"]}
-            items={[
-              { label: "FPT Plaza 3", href: `projects/${PROJECT_SLUG.FPT_PLAZA_3}` },
-              { label: "Sun Symphony Residence", href: `projects/${PROJECT_SLUG.SUN_SYMPHONY}` },
-            ]}
-          />
-          <Link href="#" className={style["menu-item"]}>
-            Bài đăng
-          </Link>
-          <Link href="#" className={style["menu-item"]}>
-            Video
-          </Link>
-          <Link href="#" className={style["menu-item"]}>
-            Liên hệ
-          </Link>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
+  const menuClassName = useMemo(() => {
+    let classNames: string[] = ["menu"];
+    if (!responsive.lg) {
+      classNames.push("menu-mobile");
+      if (showMenu) {
+        classNames.push("menu-mobile--open");
+      }
+    }
+    return classNames.map((className) => `${styles[className]}`).join(" ");
+  }, [responsive, showMenu]);
 
-  const renderDesktopMenu = (
-    <div className={style["menu"]}>
-      <Link href="#" className={style["menu-item"]}>
+  const renderMenu = (
+    <div className={`container ${menuClassName}`}>
+      <Link href="/" className={styles["menu-item"]}>
         Trang chủ
       </Link>
-      <Link href="projects" className={`${style["menu-item-dropdown"]} ${style["menu-item"]}`}>
-        <div className={style["menu-item"]}>Dự án</div>
-        <BsChevronDown />
-        <div className={style["dropdown"]}>
-          <Link href={`projects/${PROJECT_SLUG.FPT_PLAZA_3}`} className={style["dropdown-item"]}>
-            FPT Plaza 3
-          </Link>
-          <Link href={`projects/${PROJECT_SLUG.SUN_SYMPHONY}`} className={style["dropdown-item"]}>
-            Sun Symphony Residence
-          </Link>
-        </div>
-      </Link>
-      <Link href="#" className={style["menu-item"]}>
+      <div className={styles["menu-item"]}>
+        <MainMenuDropdown
+          href="/projects"
+          title="Dự án"
+          items={[
+            { label: "FPT Plaza 3", href: `/projects/${PROJECT_SLUG.FPT_PLAZA_3}` },
+            { label: "Sun Symphony Residence", href: `/projects/${PROJECT_SLUG.SUN_SYMPHONY}` },
+          ]}
+        />
+      </div>
+      <Link href="#" className={styles["menu-item"]}>
         Bài đăng
       </Link>
-      <Link href="#" className={style["menu-item"]}>
+      <Link href="#" className={styles["menu-item"]}>
         Video
       </Link>
-      <Link href="#" className={style["menu-item"]}>
+      <Link href="#" className={styles["menu-item"]}>
         Liên hệ
       </Link>
     </div>
   );
 
-  if (!mounted) return;
-
   return (
-    <header className={style["header"]}>
+    <header className={styles["header"]}>
       <div className="container">
-        <div className={style["header-wrapper"]}>
-          <div className={style["header-logo"]}>
+        <div className={styles["header-wrapper"]}>
+          <Link href="/" className={styles["header-logo"]}>
             <Image src={"/images/main/logo.png"} alt="logo" fill />
-          </div>
+          </Link>
 
-          {responsive.lg ? renderDesktopMenu : renderMobileMenu}
+          {renderMenu}
 
           <div
-            className={`${style["hamburger"]} ${showMenu && style["hamburger--active"]}`}
+            className={`${styles["hamburger"]} ${showMenu && styles["hamburger--active"]}`}
             onClick={toggleMenu}
           >
-            <div className={style["hamburger-slices"]}>
-              <div className={style["hamburger-slice"]}></div>
-              <div className={style["hamburger-slice"]}></div>
-              <div className={style["hamburger-slice"]}></div>
+            <div className={styles["hamburger-slices"]}>
+              <div className={styles["hamburger-slice"]}></div>
+              <div className={styles["hamburger-slice"]}></div>
+              <div className={styles["hamburger-slice"]}></div>
             </div>
           </div>
         </div>

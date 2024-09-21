@@ -1,47 +1,56 @@
+"use client";
+
 import React, { useState } from "react";
-import style from "./MainMenuDropdown.module.scss";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsChevronDown } from "react-icons/bs";
+import { Link, useRouter } from "@/lib/router-events";
+
+import styles from "./MainMenuDropdown.module.scss";
 
 interface MainMenuDropdownProps {
   title: string;
   href: string;
-  className?: string;
   items: { label: string; href: string }[];
 }
 
-const MainMenuDropdown: React.FC<MainMenuDropdownProps> = ({ title, href, items, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const MainMenuDropdown: React.FC<MainMenuDropdownProps> = ({ title, href, items }) => {
+  const router = useRouter();
+  const [collapsiable, setCollapsiable] = useState(false);
 
-  const toggleDropdown = (e: any) => {
-    e.preventDefault();
-    setIsOpen(!isOpen);
+  const handleNavigate = () => {
+    router.push(href);
+  };
+
+  const handleToggleCollapse = (event: any) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setCollapsiable(!collapsiable);
   };
 
   return (
-    <div className={`${className} ${style["dropdown-wrapper"]}`}>
-      <Link href={href} className={style["dropdown-title"]}>
-        {title}
+    <div className={styles["dropdown"]}>
+      <button type="button" className={styles["dropdown-trigger"]} onClick={handleNavigate}>
+        <span className={styles["dropdown-trigger__text"]}>{title}</span>
         <motion.span
-          className={style["dropdown-icon"]}
-          animate={{ rotate: isOpen ? 180 : 0 }}
+          className={styles["dropdown-trigger__icon"]}
+          animate={{ rotate: collapsiable ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          onClick={toggleDropdown}
+          onClick={handleToggleCollapse}
         >
           <BsChevronDown />
         </motion.span>
-      </Link>
+      </button>
 
       <motion.div
-        initial={{ height: 0 }}
-        animate={{ height: isOpen ? "auto" : 0 }}
+        initial={false}
+        animate={{ height: collapsiable ? "auto" : 0 }}
         exit={{ height: 0 }}
         transition={{ duration: 0.3 }}
+        className={styles["dropdown-menu"]}
       >
-        <div className={style["dropdown-content"]}>
-          {items.map((item, index) => (
-            <Link key={index} href={item.href} className={style["dropdown-item"]}>
+        <div className={styles["dropdown-menu__inner"]}>
+          {items.map((item: any, index: number) => (
+            <Link key={index} href={item.href} className={styles["dropdown-item"]}>
               {item.label}
             </Link>
           ))}

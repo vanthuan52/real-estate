@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import "../styles/globals.scss";
 import { DEFAULT_LOCALE, META_CONTENT } from "@/utils/constant";
-import { configResponsive } from "ahooks";
+import { HandleOnComplete } from "@/lib/router-events";
 
 const geistSans = localFont({
   src: "../assets/fonts/GeistVF.woff",
@@ -56,6 +56,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}>
         {children}
+        <HandleOnComplete />
       </body>
     </html>
   );

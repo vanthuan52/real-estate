@@ -1,4 +1,5 @@
-@use "variables.module" as variables;
+@import "variables.module";
+@import "nprogress/nprogress.css";
 
 :root {
   --background: #ffffff;
@@ -28,6 +29,10 @@ body {
   font-family: var(--font-montserrat);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  //   &.no-scroll {
+  //     padding-right: 20px;
+  //   }
 }
 
 * {
@@ -46,6 +51,7 @@ button {
   outline: none;
   border: none;
   color: inherit;
+  cursor: pointer;
 }
 
 li {
@@ -68,23 +74,23 @@ $container-padding: 20px;
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: variables.$breakpoint-sm) {
+  @media (min-width: $breakpoint-sm) {
     max-width: 640px;
   }
 
-  @media (min-width: variables.$breakpoint-md) {
+  @media (min-width: $breakpoint-md) {
     max-width: 768px;
   }
 
-  @media (min-width: variables.$breakpoint-lg) {
+  @media (min-width: $breakpoint-lg) {
     max-width: 1024px;
   }
 
-  @media (min-width: variables.$breakpoint-xl) {
+  @media (min-width: $breakpoint-xl) {
     max-width: 1280px;
   }
 
-  @media (min-width: variables.$breakpoint-2xl) {
+  @media (min-width: $breakpoint-2xl) {
     max-width: 1340px;
   }
 }
@@ -96,5 +102,5 @@ $container-padding: 20px;
 }
 
 .no-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
 }
